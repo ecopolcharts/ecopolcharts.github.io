@@ -36,11 +36,11 @@ function renderQuestion(selected) {
         OMIT_N = 3
     }
 
-    d3.select(".wikicharts__title").text((LANGUAGES[QUESTION] || ({ curlang: "ERROR" }))[curlang])
+    d3.select(".ecopolcharts__title").text((LANGUAGES[QUESTION] || ({ curlang: "ERROR" }))[curlang])
 
-    d3.select(".wikicharts__footer-count-number--current").text(questionindex + 1)
-    d3.select(".wikicharts__footer-count-number--all").text(Qs.length)
-    d3.select(".wikicharts__footer-progress-bar").attr("max", Qs.length).attr("value", questionindex + 1)
+    d3.select(".ecopolcharts__footer-count-number--current").text(questionindex + 1)
+    d3.select(".ecopolcharts__footer-count-number--all").text(Qs.length)
+    d3.select(".ecopolcharts__footer-progress-bar").attr("max", Qs.length).attr("value", questionindex + 1)
 
     // SIZE = 1000
     // Q = []
