@@ -1,0 +1,296 @@
+.quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 60px;
+}
+
+.quiz__answer {
+    background-color: #090d18;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.quiz__answer:not(.is-visible) {
+    display: none;
+}
+
+.quiz__answer-button {
+    align-items: center;
+    background-color: rgb(60, 80, 180);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    font-family: Rubik, sans-serif;
+    font-weight: bold;
+    justify-content: start;
+    line-height: 1.5em;
+    min-height: 36px;
+    padding:  12px;
+    text-align: left;
+    transition: background-color .3s;
+    width: 100%;
+}
+
+.quiz__answer-button:hover {
+    background-color: rgb(50, 70, 170);
+}
+
+.quiz__answer-button:active {
+    background-color: rgb(40, 60, 160);
+}
+
+.quiz__answer-button.not-agree {
+    background-color: rgb(110, 60, 60);
+}
+
+.quiz__answer-button.not-agree:hover {
+    background-color: rgb(100, 50, 50);
+}
+
+.quiz__answer-button.not-agree:active {
+    background-color: rgb(90, 40, 40);
+}
+
+.quiz__answer-button.not-interested {
+    background-color: rgb(130, 110, 60);
+}
+
+.quiz__answer-button.not-interested:hover {
+    background-color: rgb(120, 100, 50);
+}
+
+.quiz__answer-button.not-interested:active {
+    background-color: rgb(110, 90, 40);
+}
+
+.quiz__answer-button.previous {
+    background-color: rgb(100, 100, 100);
+}
+
+.quiz__answer-button.previous:hover {
+    background-color: rgb(90, 90, 90);
+}
+
+.quiz__answer-button.previous:active {
+    background-color: rgb(80, 80, 80);
+}
+
+.quiz__answer .buttons-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .quiz__answer .buttons-container {
+        flex-direction: column;
+    }
+}
+
+.quiz__answer:not(.is-expanded) .buttons-container {
+    display: none;
+}
+
+.buttons-container__button {
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    font-family: Rubik, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 1.5em;
+    min-height: 36px;
+    padding: 6px 12px;
+    transition: background-color .3s;
+}
+
+.buttons-container__button.leftbox {
+    background-color: rgb(255, 255, 85, .1);
+    color: rgb(255, 255, 85);
+}
+
+.buttons-container__button.leftbox:hover {
+    background-color: rgb(255, 255, 85, .2);
+}
+
+.buttons-container__button.leftbox:active {
+    background-color: rgb(255, 255, 85, .3);
+}
+
+.buttons-container__button.rightbox {
+    background-color: rgb(85, 255, 85, .1);
+    color: rgb(85, 255, 85);
+}
+
+.buttons-container__button.rightbox:hover {
+    background-color: rgb(85, 255, 85, .2);
+}
+
+.buttons-container__button.rightbox:active {
+    background-color: rgb(85, 255, 85, .3);
+}
+
+.modal {
+    animation: anim_modal-fade-in .3s ease forwards running;
+    background-color: rgb(9, 13, 24);
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    padding: 0;
+    transform: translateY(15px);
+    width: 700px;
+}
+
+@media screen and (max-width: 770px) {
+    .modal {
+        margin-inline: 10px;
+        max-width: 100%;
+        width: auto;
+    }
+}
+
+@keyframes anim_modal-fade-in {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal__content {
+    padding: 12px 24px;
+}
+
+.modal__content-header {
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 10px;
+}
+
+.modal__content-title {
+    margin: 0;
+}
+
+.modal__content-close {
+    align-items: center;
+    background-color: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: center;
+    min-height: 24px;
+    outline: none;
+    padding: 6px 12px;
+    text-align: center;
+    transition: .3s;
+}
+
+.modal__content-section {
+    background-color: rgb(24, 28, 39);
+    border-radius: 3px;
+    line-height: 1.5em;
+    padding: 12px;
+}
+
+.modal .buttons-container__button {
+    cursor: default;
+    margin-block: 10px;
+    margin-inline: auto;
+    min-height: 24px;
+    pointer-events: none;
+}
+
+.ecopolcharts__footer {
+    align-items: center;
+    background-color: rgba(0, 0, 0, .8);
+    bottom: 0;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+.ecopolcharts__footer-count {
+    align-items: center;
+    aspect-ratio: 1.2 / 1;
+    display: flex;
+    gap: 3px;
+    height: 100%;
+    justify-content: center;
+}
+
+.ecopolcharts__footer-count-number--current {
+    font-weight: bold;
+}
+
+.ecopolcharts__footer-count-number--all {
+    opacity: .6;
+}
+
+.ecopolcharts__footer-progress {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+    max-width: 1000px;
+    padding-inline: 12px;
+}
+
+.ecopolcharts__footer-progress-bar {
+    width: calc(100% - (36px * 2));
+}
+
+@media screen and (max-width: 1000px) {
+    .ecopolcharts__footer-progress-bar {
+        width: 100%;
+    }
+}
+
+.footer-help {
+    align-items: center;
+    aspect-ratio: 1.2 / 1;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    transition: background-color .3s;
+}
+
+.footer-help:hover {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.footer-help__icon {
+    align-items: center;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+}
