@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>EcoPolCharts • Результат</title>
+    <meta name="description"
+        content="«EcoPolCharts» (Экономико-Политические Диаграммы) — онлайн-тест на определение вашего мировоззрения и взглядов по различным вопросам, связанным с устройством мира и общества. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно." />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="theme-color" content="#090d18" media="(max-width: 1000px)">
+    <meta name="theme-color" content="#121630" media="(min-width: 1000px)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Результат">
+    <meta property="og:site_name" content="EcoPolCharts">
+    <meta property="og:description"
+        content="«EcoPolCharts» (Экономико-Политические Диаграммы) — онлайн-тест на определение вашего мировоззрения и взглядов по различным вопросам, связанным с устройством мира и общества. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно.">
+    <meta property="og:url" content="https://ecopolcharts.github.io/">
+    <meta property="og:image" content="https://ForexAlive.github.io/ecopolcharts.github.io/images/cover/cover.png">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="EcoPolCharts • Результат">
+    <meta name="twitter:description"
+        content="«EcoPolCharts» (Экономико-Политические Диаграммы) — онлайн-тест на определение вашего мировоззрения и взглядов по различным вопросам, связанным с устройством мира и общества. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно.">
+    <meta name="twitter:image" content="https://ForexAlive.github.io/ecopolcharts.github.io/images/cover/cover.png">
+    <meta name="twitter:image:alt" content="Логотип EcoPolCharts">
+
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/results.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JY69PX91M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || []
+        function gtag() { dataLayer.push(arguments) }
+        gtag('js', new Date())
+
+        gtag('config', 'G-0JY69PX91M');
+    </script>
+    <script src="d3.min.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+    <script type="text/javascript" src="boxdraw.js"></script>
+    <script type="text/javascript" src="serialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script>
+        d3.tsv("translations/translations.tsv").then(LANGUAGEDATA => {
+            LANGUAGES = {}
+            for (var i = 0; i < LANGUAGEDATA.length; i++)
+                LANGUAGES[LANGUAGEDATA[i].key + LANGUAGEDATA[i].nonce] = LANGUAGEDATA[i]
+            center = d3.select('.content')
+            Boxheight = 250
+            Boxpadding = 10
+            Resultpadding = 80
+            ResultLabelheight = 60
+            ResultPercentWidth = 30
+            ResultPercentHeight = 30
+            padding = 50
+            header = 120 + padding
+            curlang = window.location.href.split("lang=")[1].split("&")[0]
+            center.append("p").text("(вы можете сохранить свои результаты, сделав скриншот(ы) с ними)")
+            var H = (Boxheight + Resultpadding + ResultLabelheight)
+            svg = center.append('svg').attr('width', "1800").attr('height', "1710").attr("xmlns", "http://www.w3.org/2000/svg")
+            svg.append("rect").attr("width", svg.attr("width")).attr("height", svg.attr("height")).attr("fill", "#2b2d30")
+            result = window.location.href.split("result=")[1].split("&")[0]
+            result = decode(result)
+            head = header - padding
+            var hyp = head * 1.15470053839
+            textg = svg
+            align = 1600
+            //svg.append("polygon").attr("points", [[align,padding],[align+hyp/2,header],[align+hyp,padding]].map(d=>d.join(", ")).join(" ")).attr("fill","#008080");//#80b1d3
+            createLineText([1290, padding + head / 4, 500, head / 2], LANGUAGES["quizname"][curlang]).attr("fill", "white")
+            createLineText([1290, padding + head * 3 / 4, 500, head / 4], "ecopolcharts.github.io").attr("fill", "white");
+
+            ["econ","gov","soct","rel","for","legal"].forEach((d, i) => {
+                renderResult([100, H * i + header, 1600, H - Resultpadding], result[i], d)
+            })
+
+            // var canvas = center.append('canvas').node()
+            // var mainsvg = svg.node()
+            // img = center.append("img").classed("ecopolcharts__result", true).attr("width", "100%").node()
+            // var ctx = canvas.getContext("2d")
+            // var data = mainsvg.innerHTML
+            // var loader = new Image
+            // loader.width = canvas.width = svg.attr('width')
+            // loader.height = canvas.height = svg.attr('height')
+            // loader.onload = () => {
+            //     ctx.drawImage(loader, 0, 0, loader.width, loader.height)
+            //     img.src = canvas.toDataURL("image/png")
+            //     svg.remove()
+            //     d3.select("canvas").remove()
+            // }
+            // var svgXML = (new XMLSerializer).serializeToString(mainsvg)
+            // loader.src = 'data:image/svg+xml,' + encodeURIComponent(svgXML)
+
+            var result = decode(new URL(window.location.href).searchParams.get("result"));
+            
+            result.forEach((el, i) => createPieChart(i, el));
+        });
+    </script>
+</head>
+
+<body>
+    <article class="ecopolcharts">
+        <aside class="sidebar ecopolcharts__sidebar">
+            <a href="./?lang=ru" class="sidebar-logo ecopolcharts__sidebar-logo">
+                <img class="sidebar-logo__image" src="./Charts.png" alt="EcoPolcharts" width="30px">
+                <span class="sidebar-logo__title">EcoPolCharts</span>
+            </a>
+            <nav class="ecopolcharts__sidebar-buttons">
+                <a class="ecopolcharts__sidebar-button ecopolcharts__sidebar-button--home" href="./values.html?lang=ru">Все
+                    значения</a>
+            </nav>
+        </aside>
+        <main class="content ecopolcharts__content">
+            <h1 class="ecopolcharts__title">Результат</h1>
+            <div class="ecopolcharts__charts chartlist">
+                <div class="chartlist__item chartlist__item--economy">
+                    <h2 class="chartlist__title">Экономика</h2>
+                    <div class="chartlist__content">
+                        <div class="chartlist__left">
+                            <canvas class="chartlist__chart" id="results-chart-economy" width="300" height="300" aria-label="Результат EcoPolCharts" role="img"></canvas>
+                        </div>
+                        <div class="chartlist__right"></div>
+                    </div>
+                </div>
+                <div class="chartlist__item chartlist__item--politics">
+                    <h2 class="chartlist__title">Политическая система</h2>
+                    <div class="chartlist__content">
+                        <div class="chartlist__left">
+                            <canvas class="chartlist__chart" id="results-chart-politics" width="300" height="300" aria-label="Результат EcoPolCharts" role="img"></canvas>
+                        </div>
+                        <div class="chartlist__right"></div>
+                    </div>
+                </div>
+                <div class="chartlist__item chartlist__item--society">
+                    <h2 class="chartlist__title">Общество</h2>
+                    <div class="chartlist__content">
+                        <div class="chartlist__left">
+                            <canvas class="chartlist__chart" id="results-chart-society" width="300" height="300" aria-label="Результат EcoPolCharts" role="img"></canvas>
+                        </div>
+                        <div class="chartlist__right"></div>
+                    </div>
+                </div>
+                <div class="chartlist__item chartlist__item--religion">
+                    <h2 class="chartlist__title">Религия</h2>
+                    <div class="chartlist__content">
+                        <div class="chartlist__left">
+                            <canvas class="chartlist__chart" id="results-chart-religion" width="300" height="300" aria-label="Результат EcoPolCharts" role="img"></canvas>
+                        </div>
+                        <div class="chartlist__right"></div>
+                        </div>
+                </div>
+                <div class="chartlist__item chartlist__item--extpolitics">
+                    <h2 class="chartlist__title">Внешняя политика</h2>
+                    <div class="chartlist__content">
+                        <div class="chartlist__left">
+                            <canvas class="chartlist__chart" id="results-chart-extpolitics" width="300" height="300" aria-label="Результат EcoPolCharts" role="img"></canvas>
+                        </div>
+                        <div class="chartlist__right"></div>
+                    </div>
+                </div>
+                <div class="chartlist__item chartlist__item--safety">
+                    <h2 class="chartlist__title">Безопасность</h2>
+                    <div class="chartlist__content">
+                        <div class="chartlist__left">
+                            <canvas class="chartlist__chart" id="results-chart-safety" width="300" height="300" aria-label="Результат EcoPolCharts" role="img"></canvas>
+                        </div>
+                        <div class="chartlist__right"></div>
+                    </div>
+                </div>
+            </div>
+            <script>
+            </script>
+        </main>
+    </article>
+</body>
+
+</html>
