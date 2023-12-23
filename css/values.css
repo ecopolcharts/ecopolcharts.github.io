@@ -1,0 +1,19 @@
+.values-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.values-table__key {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.values-table__value {
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.values-separator {
+    width: 100%;
+}
