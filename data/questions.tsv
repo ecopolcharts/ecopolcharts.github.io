@@ -2,7 +2,7 @@ key	category	weight	0	1	2	3	4	5	6	7	8	9	10	nota	idc
 healthcare	econ		ordo	opt	soc/com	marksoc	cap	socdem	clas						
 minwage	econ		marksoc	opt	soc	socdem	cap	ordo	clas	com					
 isp	econ		ordo	clas	socdem	opt	soc/com	marksoc	cap						
-ubi	econ		clas/cap	ordo	opt	soc	socdem	marksoc	socdem	socdem	com				
+ubi	econ		clas/cap	ordo	opt/socdem	soc/com	marksoc	socdem							
 utilities	econ		cap	marksoc	soc/com	socdem	clas	opt	ordo						
 education	econ		clas/ordo	marksoc	soc/com	opt/socdem	cap								
 outsourcing	econ		soc/com	opt	cap	socdem	clas	marksoc	ordo/socdem						
