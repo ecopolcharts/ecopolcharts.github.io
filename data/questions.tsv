@@ -30,16 +30,11 @@ climate	soct		prog	just	trad	free	perf
 reproductive	soct		just	free	trad	prog	perf	just							
 ai	soct		trad	free	perf	just	prog								
 prostitution	soct		free	trad	perf	prog	just								
-praysch	rel		theo	hybr	sec/athe										
-creationism	rel		theo	sec/athe	hybr										
-church	rel		theo	hybr	sec	athe	athe*								
+praysch	rel		theo	hybr	athe	sec									
+creationism	rel		theo	sec	athe	hybr									
+church	rel		theo	hybr	sec	athe									
 memorial	rel		theo	athe	sec	hybr									
 holidays	rel		theo	sec	athe	hybr									
-whistle	legal		proced/lao	decn	hum	prot									
-police	legal		proced	decn	lao	hum	prot								
-survey	legal		proced	decn	prot	hum	lao								
-guns	legal		proced	lao	decn	hum	prot	hum*							
-deathpenalty	legal	1	proced	decn	lao/prot	hum	prot*	lao							
 immigration	for		pop	sov	asim	nat	open	iso	pop	glob					
 parliament	for		asim	glob	pop	iso	sov	nat	open/pop						
 intcurrency	for		asim	nat	glob	sov/iso	pop/open	nat	open*						
@@ -50,3 +45,8 @@ borderchecks	for		iso	sov	glob	asim/nat	open	pop	nat
 foreignaid	for		nat/sov	glob	nat/asim	asim/pop/sov	iso	open*							
 unres	for		iso/open	glob*	pop	glob	sov	nat	asim						
 espionage	for		nat	sov/asim	pop	sov	glob	iso	open						
+whistle	legal		proced/lao	decn	hum	prot									
+police	legal		proced	decn	lao	hum	prot								
+survey	legal		proced	decn	prot	hum	lao								
+guns	legal		proced	lao	decn	hum	prot	hum*							
+deathpenalty	legal	1	proced	decn	lao/prot	hum	prot*	lao							
