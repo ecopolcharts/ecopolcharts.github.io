@@ -52,7 +52,7 @@
             for (var i = 0; i < LANGUAGEDATA.length; i++)
                 LANGUAGES[LANGUAGEDATA[i].key + LANGUAGEDATA[i].nonce] = LANGUAGEDATA[i]
             center = d3.select('.content')
-            dimensions = ["econ,ordo,opt,soc,marksoc,cap,socdem,clas,com","gov,repub,auth,rep,techno,dir,plut,strato,anar,rep*,dir*,repub*,auth*","soct,perf,free,prog,trad,just","rel,theo,hybr,athe,sec,athe*","for,sov,asim,nat,open,iso,pop,glob,glob*,open*,nat*","legal,proced,decn,lao,hum,hum*,prot,prot*",].map(d=>d.split(","))
+            dimensions = ["econ,ordo,opt,soc,marksoc,cap,socdem,clas,com","gov,repub,auth,rep,techno,dir,plut,anar,rep*,dir*,repub*,auth*","soct,perf,free,prog,trad,just","rel,theo,hybr,athe,sec","for,sov,asim,nat,open,iso,pop,glob,glob*,open*,nat*","legal,proced,decn,lao,hum,hum*,prot,prot*",].map(d=>d.split(","))
 
             for (var i = 0; i < dimensions.length; i++) {
                 section = center.append("section")
