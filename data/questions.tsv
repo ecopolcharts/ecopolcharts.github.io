@@ -10,16 +10,16 @@ bankcrash	econ		soc	marksoc	cap	socdem/ordo	clas	opt	com
 highways	econ		clas/marksoc/ordo	cap	opt	socdem/soc/com									
 debt	econ		ordo/clas/opt	soc/marksoc	clas	socdem	cap	com							
 consumergoods	econ	1	soc	marksoc	cap/clas	opt	ordo/socdem/clas	com							
-elections	gov		techno	repub	dir/rep	anar	auth	plut	strato						
-representation	gov		anar	plut	rep/repub	auth	techno	dir	strato						
-concentration	gov		dir	techno	repub	plut	anar	strato	auth	rep					
-districts	gov		rep	strato	repub	dir	auth	anar	techno	plut					
-trait	gov		anar/dir	auth	plut	techno	techno/strato	rep/repub							
-electionreform	gov		plut	dir*	repub/strato	rep/dir	auth/strato/anar	techno							
-secession	gov		auth/rep/techno/strato	repub	anar/plut	dir/repub*	auth/rep/strato/techno								
-leaderselect	gov		auth/techno	repub	auth*	strato	rep	plut	anar/dir/techno						
-policysetting	gov		repub	auth	rep	techno	dir	plut	strato	anar	repub/rep*				
-peoplepolicy	gov		dir	plut	auth/techno/strato	repub	anar	rep							
+elections	gov		techno	repub	dir/rep	anar	auth	plut							
+representation	gov		anar	plut	rep/repub	auth	techno	dir							
+concentration	gov		dir	techno	repub	plut	anar		auth	rep					
+districts	gov		rep		repub	dir	auth	anar	techno	plut					
+trait	gov		anar/dir	auth	plut	techno	techno	rep/repub							
+electionreform	gov		plut	dir*	repub	rep/dir	auth/anar	techno							
+secession	gov		auth/rep/techno	repub	anar/plut	dir/repub*	auth/rep/techno								
+leaderselect	gov		auth/techno	repub	auth*		rep	plut	anar/dir/techno						
+policysetting	gov		repub	auth	rep	techno	dir	plut		anar	repub/rep*				
+peoplepolicy	gov		dir	plut	auth/techno	repub	anar	rep							
 genetic	soct		perf	free	prog	trad	just								
 flagburn	soct		just	perf	prog	trad	free								
 freespeech	soct		free	prog	perf	trad	just								
