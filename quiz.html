@@ -60,7 +60,7 @@
             window.addEventListener("beforeunload", function (e) {
                 if (FormSubmitting) return null;
 
-                (e || window.event).returnValue = "Your results were not saved. Are you sure you wish to leave?" //Gecko + IE
+                (e || window.event).returnValue = "Ваши результаты не сохранены. Вы уверены, что хотите выйти?" //Gecko + IE
                 return false
             })
         }, false)
