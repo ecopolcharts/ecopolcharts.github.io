@@ -18,14 +18,14 @@
 
 .quiz__answer-button {
     align-items: center;
-    background-color: rgb(60, 80, 180);
+    background-color: rgb(111, 68, 159);
     border: none;
     color: white;
     cursor: pointer;
     display: flex;
     font-size: 14px;
     font-family: Rubik, sans-serif;
-    font-weight: bold;
+    /*font-weight: bold;*/
     justify-content: start;
     line-height: 1.5em;
     min-height: 36px;
