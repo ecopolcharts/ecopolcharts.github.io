@@ -23,7 +23,7 @@
     color: white;
     cursor: pointer;
     display: flex;
-    font-size: 14px;
+    font-size: 15.5px;
     font-family: Rubik, sans-serif;
     /*font-weight: bold;*/
     justify-content: start;
@@ -36,11 +36,11 @@
 }
 
 .quiz__answer-button:hover {
-    background-color: rgb(50, 70, 170);
+    background-color: rgb(101, 58, 149);
 }
 
 .quiz__answer-button:active {
-    background-color: rgb(40, 60, 160);
+    background-color: rgb(91, 48, 139);
 }
 
 .quiz__answer-button.not-agree {
